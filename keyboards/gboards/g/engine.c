@@ -203,10 +203,6 @@ C_SIZE mapKeys(C_SIZE chord, bool lookup) {
             if (!lookup) {
                 uint8_t comboKeys[COMBO_MAX];
                 memcpy_P(&comboKeys, fromPgm.keys, sizeof(uint8_t) * COMBO_MAX);
-                for (int j = 0; j < COMBO_MAX; j++)
-#ifndef NO_DEBUG
-                    uprintf("Combo [%u]: %u\n", j, comboKeys[j]);
-#endif
 
                 for (int j = 0; (j < COMBO_MAX) && (comboKeys[j] != COMBO_END); j++) {
 #ifndef NO_DEBUG
